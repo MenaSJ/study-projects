@@ -1,4 +1,4 @@
-export default function Header ({cart, removeFromCart}) {
+export default function Header ({cart, removeFromCart, increaseQuantity, decrementQuantity}) {
 
     //state derivado
     const isEmpty = () => cart.length === 0;
@@ -46,6 +46,7 @@ export default function Header ({cart, removeFromCart}) {
                                             </td>
                                             <td className="flex align-items-start gap-4">
                                                 <button
+                                                    onClick={() => decrementQuantity(guitar.id)}
                                                     type="button"
                                                     className="btn btn-dark"
                                                 >
@@ -53,6 +54,7 @@ export default function Header ({cart, removeFromCart}) {
                                                 </button>
                                                     {guitar.quantity}
                                                 <button
+                                                    onClick={() => increaseQuantity(guitar.id)}
                                                     type="button"
                                                     className="btn btn-dark"
                                                 >
