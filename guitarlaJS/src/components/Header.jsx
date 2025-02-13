@@ -1,4 +1,4 @@
-export default function Header ({cart, removeFromCart, increaseQuantity, decrementQuantity}) {
+export default function Header ({cart, removeFromCart, increaseQuantity, decrementQuantity, clearCart}) {
 
     //state derivado
     const isEmpty = () => cart.length === 0;
@@ -10,14 +10,14 @@ export default function Header ({cart, removeFromCart, increaseQuantity, decreme
             <div className="row justify-content-center justify-content-md-between">
                 <div className="col-8 col-md-3">
                     <a href="index.html">
-                        <img className="img-fluid" src="./public/img/logo.svg" alt="imagen logo" />
+                        <img className="img-fluid" src="/img/logo.svg" alt="imagen logo" />
                     </a>
                 </div>
                 <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
                     <div 
                         className="carrito"
                     >
-                        <img className="img-fluid" src="./public/img/carrito.png" alt="imagen carrito" />
+                        <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
 
                         <div id="carrito" className="bg-white p-3">
                             { isEmpty() ? (
@@ -38,7 +38,7 @@ export default function Header ({cart, removeFromCart, increaseQuantity, decreme
                                         {cart.map(guitar => (
                                         <tr key={guitar.id}>
                                             <td>
-                                                <img className="img-fluid" src={`./public/img/${guitar.image}.jpg`} alt="imagen guitarra" />
+                                                <img className="img-fluid" src={`/img/${guitar.image}.jpg`} alt="imagen guitarra" />
                                             </td>
                                             <td>{guitar.name}</td>
                                             <td className="fw-bold">
@@ -76,7 +76,7 @@ export default function Header ({cart, removeFromCart, increaseQuantity, decreme
                                 </table>
 
                                 <p className="text-end">Total pagar: <span className="fw-bold">${cartTotal}</span></p>
-                                <button className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
+                                <button onClick={clearCart} className="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
                             </>
                         )}
                         </div>
