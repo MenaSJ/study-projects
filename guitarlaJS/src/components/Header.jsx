@@ -1,9 +1,5 @@
-export default function Header ({cart, removeFromCart, increaseQuantity, decrementQuantity, clearCart}) {
-
-    //state derivado
-    const isEmpty = () => cart.length === 0;
-    const cartTotal = cart.reduce((total, item) => total + (item.quantity * item.price), 0);
-    
+export default function Header ({cart, removeFromCart, increaseQuantity, decrementQuantity, clearCart, isEmpty, cartTotal}) {
+  
     return (
         <header className="py-5 header">
         <div className="container-xl">
