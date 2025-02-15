@@ -1,8 +1,8 @@
 type Guitar = {
-    id: Number
-    name: String
-    image: String
-    description: String
+    id: number
+    name: string
+    image: string
+    description: string
     price: number
 }
 
