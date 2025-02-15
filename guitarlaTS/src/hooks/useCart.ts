@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { db } from '../data/db';
+import type { Guitar } from '../types';
 
 export const useCart = () => {
     const initialCart = () => {
